@@ -21,6 +21,7 @@ from django.db import models
 #          Core models          #
 #################################
 # Andrew
+#jeff
 
 
 class location(models.Model):
