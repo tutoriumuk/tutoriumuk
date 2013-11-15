@@ -20,6 +20,7 @@ from django.db import models
 #################################
 #          Core models          #
 #################################
+# Andrew
 
 
 class location(models.Model):
