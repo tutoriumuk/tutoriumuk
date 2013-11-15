@@ -21,8 +21,10 @@ from django.db import models
 #          Core models          #
 #################################
 
+
 class location(models.Model):
-        postcode = models.CharField(max_length=150,unique=True)         #
+        postcode = models.CharField(max_length=150,unique=True)
+
 
 class subject(models.Model):
         subject         = models.CharField(max_length=150,unique=True)      # e.g. "math, biology, chemistry, physics"
@@ -31,7 +33,7 @@ class subject(models.Model):
 
 
 class student(models.Model):
-        name            = models.CharField(max_length=150,unique=True)      # e.g. "taxid:9606" } in particular "9606" (?) // Header: "Taxid Interactor A:"&"Taxid Interactor B:"
+        name            = models.CharField(max_length=150,unique=True)      # e.g.
         school          = models.CharField(max_length=150,unique=True)      # e.g. "taxid:9606" } in particular "9606" (?) // Header: "Taxid Interactor A:"&"Taxid Interactor B:"
         expired         = models.CharField(max_length=150,unique=True)      # e.g. "taxid:9606" } in particular "9606" (?) // Header: "Taxid Interactor A:"&"Taxid Interactor B:"
 
@@ -40,19 +42,18 @@ class student(models.Model):
 
 
 class tutor(models.Model):
-
         university      = models.CharField(max_length=150,unique=True)      # e.g. "taxid:9606" } in particular "9606" (?) // Header: "Taxid Interactor A:"&"Taxid Interactor B:"
         degree          = models.CharField(max_length=150,unique=True)      # e.g. "taxid:9606" } in particular "9606" (?) // Header: "Taxid Interactor A:"&"Taxid Interactor B:"
         name            = models.CharField(max_length=150,unique=True)      # e.g. "taxid:9606" } in particular "9606" (?) // Header: "Taxid Interactor A:"&"Taxid Interactor B:"
         expired         = models.CharField(max_length=150,unique=True)      # e.g. "taxid:9606" } in particular "9606" (?) // Header: "Taxid Interactor A:"&"Taxid Interactor B:"
-        willing_zone    =
+#        willing_zone    =
 
         location_key    = models.ForeignKey(location)
         subject_key     = models.ForeignKey(subject)
 
 class lesson(models.Model):
         vacancy         = models.CharField(max_length=150,unique=True)      # 'open', 'occupied', 'expired'
-        date            = models.CharField(max_length=150,unique=True)      # e.g. "taxid:9606" } in particular "9606" (?) // Header: "Taxid Interactor A:"&"Taxid Interactor B:"
+        date            = models.CharField(max_length=150)                  #
         starttime       = models.CharField(max_length=150,unique=True)      # e.g. "taxid:9606" } in particular "9606" (?) // Header: "Taxid Interactor A:"&"Taxid Interactor B:"
         endtime         = models.CharField(max_length=150,unique=True)      # e.g. "taxid:9606" } in particular "9606" (?) // Header: "Taxid Interactor A:"&"Taxid Interactor B:"
 
@@ -60,5 +61,3 @@ class lesson(models.Model):
         subject_key     = models.ForeignKey(subject)
         student_key     = models.ForeignKey(student)
         tutor_key       = models.ForeignKey(tutor)
-
-"""
