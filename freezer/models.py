@@ -33,19 +33,19 @@ class subject(models.Model):
 
 
 class student(models.Model):
-        name            = models.CharField(max_length=150,unique=True)      # e.g.
-        school          = models.CharField(max_length=150,unique=True)      # e.g. "taxid:9606" } in particular "9606" (?) // Header: "Taxid Interactor A:"&"Taxid Interactor B:"
-        expired         = models.CharField(max_length=150,unique=True)      # e.g. "taxid:9606" } in particular "9606" (?) // Header: "Taxid Interactor A:"&"Taxid Interactor B:"
+        name            = models.CharField(max_length=150,unique=True)      # e.g. Hyuk-Jin
+        school          = models.CharField(max_length=150,unique=True)      # e.g. St. Mary
+        expired         = models.CharField(max_length=150,unique=True)      # e.g. TRUE // FALSE
 
         location_key    = models.ForeignKey(location)
         subject_key     = models.ForeignKey(subject)
 
 
 class tutor(models.Model):
-        university      = models.CharField(max_length=150,unique=True)      # e.g. "taxid:9606" } in particular "9606" (?) // Header: "Taxid Interactor A:"&"Taxid Interactor B:"
-        degree          = models.CharField(max_length=150,unique=True)      # e.g. "taxid:9606" } in particular "9606" (?) // Header: "Taxid Interactor A:"&"Taxid Interactor B:"
-        name            = models.CharField(max_length=150,unique=True)      # e.g. "taxid:9606" } in particular "9606" (?) // Header: "Taxid Interactor A:"&"Taxid Interactor B:"
-        expired         = models.CharField(max_length=150,unique=True)      # e.g. "taxid:9606" } in particular "9606" (?) // Header: "Taxid Interactor A:"&"Taxid Interactor B:"
+        university      = models.CharField(max_length=150,unique=True)      # Imperial College
+        degree          = models.CharField(max_length=150,unique=True)      # BSc Biology
+        name            = models.CharField(max_length=150,unique=True)      # Andrew
+        expired         = models.CharField(max_length=150,unique=True)      # TRUE
 #        willing_zone    =
 
         location_key    = models.ForeignKey(location)
